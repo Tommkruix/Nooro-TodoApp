@@ -33,7 +33,7 @@ This method runs everything inside Docker containers with a single command.
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/your-repo/nooro.git
+   git clone https://github.com/Tommkruix/nooro.git
    cd nooro
    ```
 
