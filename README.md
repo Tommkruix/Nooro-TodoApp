@@ -13,6 +13,9 @@ This guide provides two methods to set up and run the application:
 1. **Using Docker** (Recommended, One-command setup)
 2. **Manual Setup** (Setting up MySQL and running services manually)
 
+In this repository, the screenshots are placed in a `screenshots` directory within the repository directory.
+This will help provide visual guidance to users setting up and running the Nooro web app.
+
 ## Prerequisites
 
 Ensure you have the following installed:
