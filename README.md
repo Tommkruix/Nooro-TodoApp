@@ -37,13 +37,6 @@ This method runs everything inside Docker containers with a single command.
    cd nooro
    ```
 
-   **Step 1: Update Environment Files**
-        Before running the app, rename the environment variable files in both the backend and frontend directories:
-        ```bash
-        mv backend/env.sample backend/.env
-        mv front-end/env.sample front-end/.env
-        ```
-
 2. **Run the app with a single command:**
 
    ```sh

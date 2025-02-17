@@ -2,6 +2,10 @@
 
 chmod +x start.sh
 
+# Rename env.sample to .env in front-end and backend folders
+mv front-end/env.sample front-end/.env
+mv backend/env.sample backend/.env
+
 echo "Waiting for Docker to build image..."
 docker-compose up --build
 
