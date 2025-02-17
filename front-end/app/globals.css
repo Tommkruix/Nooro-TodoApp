@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #F2F2F2;
+  --black: #0D0D0D;
+  --purple: #8284FA;
+  --light-blue: #1E6F9F;
+  --deep-blue: #4EA8DE;
+  --light-grey: #444444;
+  --light-fade-grey: #808080;
+  --deep-grey: #333333;
+  --extra-deep-grey: #1A1A1A;
+}
+
+body {
+  color: var(--white);
+  background: var(--extra-deep-grey);
+  font-family: "Inter", "Rubik", Arial, Helvetica, sans-serif;
+}
+
+main {
+  padding: 0px 400px 10px 400px;
+}
+
+@media (max-width: 1600px) {
+  main {
+    padding: 0px 100px 10px 100px;
+  }
+}
+
+@media (max-width: 1400px) {
+  main {
+    padding: 0px 100px 5px 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    padding: 0px 100px 5px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0px 100px 5px 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0px 50px 5px 50px;
+  }
+}
