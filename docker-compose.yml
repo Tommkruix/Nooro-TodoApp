@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: nooro-backend
+    container_name: nooro-backend
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE_URL: "mysql://root:password@db:3306/nooro"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "
+      npx prisma migrate dev &&
+      npx prisma db seed &&
+      npm run dev
+      "
+
+  frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    image: nooro-frontend
+    container_name: nooro-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8.0
+    container_name: nooro-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "nooro"
+    ports:
+      - "3303:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 3
+      timeout: 5s
+
+volumes:
+  mysql_data:
