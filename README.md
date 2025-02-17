@@ -37,6 +37,13 @@ This method runs everything inside Docker containers with a single command.
    cd nooro
    ```
 
+   **Step 1: Update Environment Files**
+        Before running the app, rename the environment variable files in both the backend and frontend directories:
+        ```bash
+        mv backend/env.sample backend/.env
+        mv front-end/env.sample front-end/.env
+        ```
+
 2. **Run the app with a single command:**
 
    ```sh
@@ -87,6 +94,12 @@ If you prefer, you can run the backend and frontend manually by setting up MySQL
    DATABASE_URL="mysql://root:password@localhost:3306/nooro"
    ```
 
+   If the `.env` file does not exist, rename `env.sample` to `.env`:
+
+   ```bash
+   mv backend/env.sample backend/.env
+   ```
+
 2. Navigate to the backend directory:
 
    ```bash
@@ -125,6 +138,12 @@ If you prefer, you can run the backend and frontend manually by setting up MySQL
 
    ```bash
    cd ../front-end
+   ```
+
+   Rename the `env.sample` file to `.env` in the frontend directory:
+
+   ```bash
+   mv front-end/env.sample front-end/.env
    ```
 
 2. Install dependencies:
